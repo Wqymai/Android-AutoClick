@@ -274,8 +274,8 @@ public class FloatView extends FrameLayout implements OnTouchListener {
                 float mMoveStartX = event.getX();
                 float mMoveStartY = event.getY();
                 // 如果移动量大于3才移动
-                if (Math.abs(mTouchStartX - mMoveStartX) > 3
-                        && Math.abs(mTouchStartY - mMoveStartY) > 3) {
+                if (Math.abs(mTouchStartX - mMoveStartX) > 20
+                        && Math.abs(mTouchStartY - mMoveStartY) > 20) {
                     mDraging = true;
                     // 更新浮动窗口位置参数
                     mWmParams.x = (int) (x - mTouchStartX);
@@ -375,7 +375,7 @@ public class FloatView extends FrameLayout implements OnTouchListener {
                 mWmParams.alpha = 1f;
                 mWindowManager.updateViewLayout(this, mWmParams);
 
-                timerForHide();
+//                timerForHide();
 
                 mShowLoader = false;
                 Animation rotaAnimation = AnimationUtils.loadAnimation(mContext,
